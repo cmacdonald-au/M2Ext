@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <EcomCore_M2Ext>
+            <version>0.0.1</version>
+        </EcomCore_M2Ext>
+    </modules>
+    <global>
+        <models>
+            <ecomcore_m2ext>
+                <class>EcomCore_M2Ext_Model</class>
+            </ecomcore_m2ext>
+        </models>
+        <helpers>
+            <EcomCore_M2Ext>
+                <class>EcomCore_M2Ext_Helper</class>
+            </EcomCore_M2Ext>
+        </helpers>
+        <events>
+            <adminhtml_widget_container_html_before>
+                <observers>
+                    <ecomcore_m2ext>
+                        <class>ecomcore_m2ext/observer</class>
+                        <method>layoutObserver</method>
+                        <type>singleton</type>
+                    </ecomcore_m2ext>
+                </observers>
+            </adminhtml_widget_container_html_before>
+        </events>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <m2ext after="M2ePro_Adminhtml">EcomCore_M2Ext</m2ext>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

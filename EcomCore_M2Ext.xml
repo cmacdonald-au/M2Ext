@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <EcomCore_M2Ext>
+            <active>true</active>
+            <codePool>local</codePool>
+        </EcomCore_M2Ext>
+    </modules>
+</config>
+
