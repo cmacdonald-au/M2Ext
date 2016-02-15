@@ -73,6 +73,7 @@ class EcomCore_M2Ext_Model_Report extends Mage_Core_Model_Abstract
 
         $dbres = $res->getConnection('core_read');
         $ptr   = $dbres->query($sql, $params);
+	Mage::log(__METHOD__.'() Running: `'.$sql.'` with params {'.var_export($params, true).'}');
         $data  = $ptr->fetchAll();
         array_unshift($data, $headers);
         return $data;

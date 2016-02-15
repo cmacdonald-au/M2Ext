@@ -23,10 +23,12 @@ class EcomCore_M2Ext_M2ExtController extends Mage_Adminhtml_Controller_Action
         if (isset($filterParams['purchase_create_date'])) {
             $dateParams = $filterParams['purchase_create_date'];
             if (isset($dateParams['from'])) {
-                $fromDate = str_replace('/', '-', $dateParams['from']);
+                $fromDate = explode('/', $dateParams['from']);
+		$fromDate = implode('-', array($fromDate[2], $fromDate[0], $fromDate[1]));
             }
-            if (isset($datParams['to'])) {
-                $toDate = str_replace('/', '-', $dateParams['to']);
+            if (isset($dateParams['to'])) {
+                $toDate = explode('/', $dateParams['to']);
+		$toDate = implode('-', array($toDate[2], $toDate[0], $toDate[1]));
             }
         }
 
